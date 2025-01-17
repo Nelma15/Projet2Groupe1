@@ -59,7 +59,7 @@ namespace Projet2Groupe1.Controllers
             }
         }
 
-        public IActionResult RegisterOrganizer()
+        public IActionResult OrganizerRegistration()
         {
             return View();
         }

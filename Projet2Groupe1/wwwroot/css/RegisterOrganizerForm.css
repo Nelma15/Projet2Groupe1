@@ -1,21 +1,108 @@
 ﻿
-body{
 
+#FormOrganizer{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
-#leftColumn {
-    flex: 1;
-    background-color: #f1f1f1;
+
+    #FormOrganizer #leftColumn, #rightColumn {
+        flex: 0.17;
+        padding: 10px
+    }
+
+    #FormOrganizer #centralColumn {
+        
+        border: solid, 1px, white;
+        padding: 10px
+    }
+
+label {
+    font-size: 16px
+}
+
+#FormOrganizer > div {
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+}
+
+#FormOrganizer form #Input {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/*  refair edeux colonnes dedans avec le dsiplay flex
+    pour accoler les inputs  */
+
+#FormOrganizer input {
+    border-radius: 12px;
+    border: solid black 3px;
+    height: 40px;
+}
+
+#radioButtons,#FirstRow, #SecondRow, #ThirdRow, #FourthRow ,#FifthRow,#SixthRow,#SeventhRow{
+    display: flex;
+    flex-direction: row;
+}
+#radioButtons {
+    gap: 10px; 
+    align-items: center; 
+    align-self: center;
+}
+
+#FirstRow > *,
+#SecondRow > *,
+#ThirdRow > *,
+#FourthRow > *,
+#FifthRow > *,
+#SixthRow > *,
+#SeventhRow > * {
+    display: flex;
+    flex-direction: column;
+}
+
+#Newsletter {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
-#rightColumn {
-    flex: 1;
-    background-color: #f1f1f1;
+
+#title {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#FirstName, #Age, #Mail, #City, #Denomination, #StreetNumber, #NamedPlace {
+    margin-right: 3vw;
+}
+
+#finalBlock {
     display: flex;
+    flex-direction: column;
+    en colonne justify-content: center;
     align-items: center;
-    justify-content: center;
+    text-align: center;
+    margin-top: 3vw;
+    font-size: 16px;
 }
+
+#FormOrganizer #btn {
+    display: block;
+    margin: auto;
+    height: 40px;
+    width: 150px;
+    border-radius: 12px;
+    border: solid black 3px;
+    font-size: 16px;
+    background-color: rgba(26, 110, 232, 1);
+    color: white;
+}
+
 
 
 

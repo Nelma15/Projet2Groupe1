@@ -1,0 +1,145 @@
+﻿@model Projet2Groupe1.ViewModels.OrganizerViewModel
+
+@{
+    Layout = "_layoutHeaderFooter";
+    ViewBag.Title = "Inscription";
+}
+
+<!DOCTYPE html>
+<head>
+    <link href="~/css/RegisterOrganizerForm.css" rel="stylesheet" />
+</head>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inscription Organisateur</title>
+
+</head>
+
+<div>
+    <section id="FormOrganizer">
+        <div id="centralColumn">
+            <h2 id="title">Inscrivez-vous gratuitement</h2>
+            @using (Html.BeginForm())
+            {
+                <div id="Input">
+                    <div id="radioButtons">
+                        <input type="radio" id="entreprise" name="organisateur" value="ENTREPRISE">
+                        <label for="entreprise">Entreprise</label>
+                        <input type="radio" id="association" name="organisateur" value="ASSOCIATION">
+                        <label for="association">Association</label>
+                        <input type="radio" id="organisme" name="organisateur" value="ORGANISME">
+                        <label for="organisme">Organisme public</label>
+                    </div>
+                    <div id="FirstRow">
+                        <div id="FirstName">
+                            @Html.LabelFor(m => Model.User.FirstName, "votre prenom")
+                            @Html.TextBoxFor(m => Model.User.FirstName)
+                            @Html.ValidationMessageFor(m => Model.User.FirstName)
+                        </div>
+
+                        <div id="LastName">
+                            @Html.LabelFor(m => Model.User.LastName, "votre nom")
+                            @Html.TextBoxFor(m => Model.User.LastName)
+                            @Html.ValidationMessageFor(m => Model.User.LastName)
+                        </div>
+                    </div>
+                    <div id="SecondRow">
+                        <div id="Age">
+                            @Html.LabelFor(m => Model.Organizer.Function, "Fonction au sein de l'entreprise")
+                            @Html.TextBoxFor(m => Model.Organizer.Function)
+                            @Html.ValidationMessageFor(m => Model.Organizer.Function)
+                        </div>
+
+                        <div id="Phone">
+                            @Html.LabelFor(m => Model.User.Phone, "votre numero de telephone")
+                            @Html.TextBoxFor(m => Model.User.Phone)
+                            @Html.ValidationMessageFor(m => Model.User.Phone)
+                        </div>
+                    </div>
+                    <div id="ThirdRow">
+                        <div id="Mail">
+                            @Html.LabelFor(m => Model.User.Mail, "votre adresse mail")
+                            @Html.TextBoxFor(m => Model.User.Mail)
+                            @Html.ValidationMessageFor(m => Model.User.Mail)
+                        </div>
+
+                        <div id="Password">
+                            @Html.LabelFor(m => Model.User.Password, "mot de passe")
+                            @Html.PasswordFor(m => Model.User.Password)
+                            @Html.ValidationMessageFor(m => Model.User.Password)
+                        </div>
+                    </div>
+                    <div id="FourthRow">
+                        <div id="Denomination">
+                            @Html.LabelFor(m => Model.Organizer.Denomination, "Dénomination sociale")
+                            @Html.TextBoxFor(m => Model.Organizer.Denomination)
+                            @Html.ValidationMessageFor(m => Model.Organizer.Denomination)
+                        </div>
+
+                        <div id="Rib">
+                            @Html.LabelFor(m => Model.Organizer.RIB, "RIB")
+                            @Html.TextBoxFor(m => Model.Organizer.RIB)
+                            @Html.ValidationMessageFor(m => Model.Organizer.RIB)
+                        </div>
+                    </div>
+                    <div id="FifthRow">
+                        <div id="City">
+                            @Html.LabelFor(m => Model.Organizer.Adress.City, "votre ville")
+                            @Html.TextBoxFor(m => Model.Organizer.Adress.City)
+                            @Html.ValidationMessageFor(m => Model.Organizer.Adress.City)
+                        </div>
+
+                        <div id="ZipCode">
+                            @Html.LabelFor(m => Model.Organizer.Adress.ZipCode, "votre code postal")
+                            @Html.TextBoxFor(m => Model.Organizer.Adress.ZipCode)
+                            @Html.ValidationMessageFor(m => Model.Organizer.Adress.ZipCode)
+                        </div>
+                    </div>
+                    <div id="SixthRow">
+                        <div id="StreetNumber">
+                            @Html.LabelFor(m => Model.Organizer.Adress.StreetNumber, "Numéro de rue")
+                            @Html.TextBoxFor(m => Model.Organizer.Adress.StreetNumber)
+                            @Html.ValidationMessageFor(m => Model.Organizer.Adress.StreetNumber)
+                        </div>
+                        <div id="StreetName">
+                            @Html.LabelFor(m => Model.Organizer.Adress.StreetName, "Nom de la rue")
+                            @Html.TextBoxFor(m => Model.Organizer.Adress.StreetName)
+                            @Html.ValidationMessageFor(m => Model.Organizer.Adress.StreetName)
+                        </div>
+                    </div>
+                    <div id="SeventhRow">
+                        <div id="NamedPlace">
+                            @Html.LabelFor(m => Model.Organizer.Adress.NamedPlace, "Lieu-dit")
+                            @Html.TextBoxFor(m => Model.Organizer.Adress.NamedPlace)
+                            @Html.ValidationMessageFor(m => Model.Organizer.Adress.NamedPlace)
+                        </div>
+                        <div id="StreetComplement">
+                            @Html.LabelFor(m => Model.Organizer.Adress.StreetComplement, "Complément d'adresse")
+                            @Html.TextBoxFor(m => Model.Organizer.Adress.StreetComplement)
+                            @Html.ValidationMessageFor(m => Model.Organizer.Adress.StreetComplement)
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div id="finalBlock">
+                    <div id="Newsletter">
+                        @Html.CheckBoxFor(m => Model.User.Newsletter)
+                        @Html.LabelFor(m => Model.User.Newsletter, "J'accepte de recevoir des offres de Soundtogether")
+                    </div>
+                    <div id="Conditions générales">
+                        <p>En cliquant sur s'inscrire vous acceptez les conditions générales de SoundTogether</p>
+                    </div>
+                </div>
+
+                <input id="btn" type="submit" value="Je m'inscris" />
+            }
+        </div>
+       
+    </section>
+</div>
+
+</html>

@@ -1,7 +1,15 @@
-﻿#FormMember {
-    background-color:navajowhite;
+﻿
+
+#FormMember {
+    background-color: white;
     display: flex;
     flex-direction: row;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 20px; 
+  
+ 
 }
 
 #FormMember #leftColumn, #rightColumn {
@@ -10,9 +18,13 @@
 }
 
 #FormMember #centralColumn {
-    flex: 0.66;
-    border:solid, 1px, black;
+
+    border:solid, 1px, white;
     padding: 10px
+}
+
+label {
+    font-size: 16px
 }
 
 #FormMember > div {
@@ -22,18 +34,18 @@
     }
 
 #FormMember form #Input{
-    background-color:yellow;
+    background-color:white;
     display: flex;
     flex-direction: column;
-    gap:30px;
+    gap:20px;
 }
 /*  refair edeux colonnes dedans avec le dsiplay flex
     pour accoler les inputs  */
 
-#FormMember input, #btn {
+#FormMember input {
     border-radius: 12px;
     border: solid black 3px;
-    height: 28px;
+    height: 40px;
 }
 
 #FirstRow, #SecondRow, #ThirdRow, #FourthRow {
@@ -51,5 +63,36 @@
 
 #IsPremium, #Newsletter {
     display: flex;
-    align-items: center;;
+    align-items: center;
+}
+
+#title{
+    text-align: center;
+    margin-bottom:35px;
+}
+
+#FirstName,#Age,#Mail,#City{
+    margin-right: 3vw;
+}
+
+#finalBlock {
+    display: flex; 
+    flex-direction: column;  en colonne 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin-top: 3vw;
+    font-size : 16px;
+}
+
+#FormMember #btn {
+    display: block;
+    margin: auto;
+    height: 40px;
+    width: 150px;
+    border-radius: 12px;
+    border: solid black 3px;
+    font-size:16px;
+    background-color: darkorange;
+    color: white;
 }

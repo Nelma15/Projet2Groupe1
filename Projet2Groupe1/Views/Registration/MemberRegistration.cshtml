@@ -18,15 +18,12 @@
 
 </head>
 
-<body>
-    <section id="FormMember">
-        @* Colonne de gauche *@
-        <div id="leftColumn"></div>
-        @* Colonne centrale *@
-        <div id="centralColumn">
-            <h2>Inscrivez-vous gratuitement</h2>
+<div>
 
-            @using (Html.BeginForm())
+    <section id="FormMember">
+        <div id="centralColumn">
+           <h2 id="title">Inscrivez-vous gratuitement</h2>
+           @using (Html.BeginForm())
             {
                 <div id="Input">
                     <div id="FirstRow">
@@ -83,7 +80,7 @@
                     </div>
                     
                 </div>
-                <div>
+                <div id="finalBlock">
                     <div id="IsPremium">
                         @Html.CheckBoxFor(m => Model.Member.IsPremium, new { id = "IsPremiumCheckbox"} )
                         @Html.LabelFor(m => Model.Member.IsPremium, "Activer le mode Premium pour plus  de fonctionnalités")
@@ -93,13 +90,15 @@
                         @Html.CheckBoxFor(m => Model.User.Newsletter)
                         @Html.LabelFor(m => Model.User.Newsletter, "J'accepte de recevoir des offres de Soundtogether")
                     </div>
+                    <div id="Conditions générales">
+                       <p>En cliquant sur s'inscrire vous acceptez les conditions générales de SoundTogether</p>
+                    </div>
                 </div>
 
-                <input id="btn" type="submit" value="Je m'inscris" />
+                <input id="btn" type="submit" value="Je m'inscris'" />
             }
         </div>
-        @* Colonne de droite *@
-        <div id="rightColumn"></div>
+        
     </section>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -117,6 +116,6 @@
             });
         });
     </script>
-</body>
+</div>
 
 </html>
